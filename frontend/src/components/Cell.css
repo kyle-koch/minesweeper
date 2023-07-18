@@ -1,0 +1,59 @@
+.cell {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border: 3px solid #ccc;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  background-color: gray;
+  color: black;
+  vertical-align: top;
+}
+
+.cell.clicked {
+  background-color: lightgray;
+}
+
+.cell .bomb {
+  color: red;
+}
+
+.cell .flag {
+  color: blue;
+}
+
+.bomb-count-1 {
+  color: blue;
+}
+
+.bomb-count-2 {
+  color: green;
+}
+
+.bomb-count-3 {
+  color: yellow;
+}
+
+.bomb-count-4 {
+  color: red;
+}
+
+.bomb-count-5 {
+  color: purple;
+}
+
+.bomb-count-6 {
+  color: magenta;
+}
+
+.bomb-count-7 {
+  color: blueviolet;
+}
+
+.bomb-count-8 {
+  color: pink;
+}

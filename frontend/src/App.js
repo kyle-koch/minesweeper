@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Board from './components/Board';
+import Settings from './components/Settings';
+import Timer from './components/Timer';
+import UserTimes from './components/UserTimes';
 
-function App() {
+const App = () => {
+  const [difficulty, setDifficulty] = useState('easy');
+  const [gameActive, setGameActive] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
+
+  const handleDifficultyChange = (difficulty) => {
+    setDifficulty(difficulty);
+  };
+
+  const startGame = () => {
+    setGameActive(true);
+    setGameOver(false);
+  };
+
+  const handleGameOver = () => {
+    setGameActive(false);
+    setGameOver(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Settings onDifficultyChange={handleDifficultyChange} />
+      <Timer isActive={gameActive} />
+      <Board
+        difficulty={difficulty}
+        gameActive={gameActive}
+        onGameOver={handleGameOver}
+      />
+      <button onClick={startGame}>Start Game</button>
+      <UserTimes />
     </div>
   );
-}
+};
 
 export default App;
